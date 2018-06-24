@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/navigation.css">
+    <link rel="stylesheet" href="../css/navigation.css">
     <title>Oriflame Sweden</title>
     <center>
       <h1>Oriflame Sweden</h1>

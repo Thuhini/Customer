@@ -11,7 +11,8 @@ if($_POST["submit"]){
   $result = mysql_query($sql);
 
     if (mysql_num_rows($result)==1) {
-        echo "login";
+          header("location: ../home.php");
+
       } else {
         echo "fail";
       }
