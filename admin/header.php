@@ -19,10 +19,10 @@
       <li><a href="hair.php">Hair</a></li>
       <li><a href="wellness.php">Willness</a></li>
       <li><a href="men.php">Men</a></li>
-      <li><a href="Men">About</a></li>
-      <li><a href="Men">Contact Us</a></li>
-      <li class="logSign"><a href="register.php">SignUp</a></li>
-      <li class="logSign"><a href="login.php">Login</a></li>
+
+      <li class="logSign"><a href="register.php">Questions</a></li>
+      <li class="logSign"><a href="register.php">Orders</a></li>
+      <li class="logSign"><a href="login.php">Customers</a></li>
     </ul>
 
 

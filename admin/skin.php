@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <?php include 'header.php'; ?>
 <?php
-mysql_connect("localhost","root","") or die ("Error Occures");
-mysql_select_db("customer") or die("Error Occures");
+$db=mysqli_connect("localhost","root","") or die ("Error Occures");
+mysqli_select_db($db,"customer") or die("Error Occures");
 $sql = "SELECT * FROM skin";
-$records = mysql_query($sql);
+$records = mysqli_query($db,$sql);
 ?>
-
 <html lang="en" dir="ltr">
 <link rel="stylesheet" href="../css/register.css">
 <link rel="stylesheet" href="css/table.css">
@@ -97,7 +96,8 @@ $records = mysql_query($sql);
 
       <?php
         $count = 0;
-        while($row = mysql_fetch_assoc($records)) {
+
+        while($row = mysqli_fetch_assoc($records)) {
 
           echo "<tr>";
 					echo "<td>".$row["ItemCode"]."</td>";
@@ -105,69 +105,25 @@ $records = mysql_query($sql);
 					echo "<td>".$row["Discription"]."</td>";
 					echo "<td>".$row["Price"]."</td>";
           echo "<td>
-              <button id=".$count." onClick='reply(this.id)' class='button1'>Edit</button>
-              <button class='button2'>Delete</button>
+              <form method='post' action='fill.php'>
+              <input type='hidden' name='id' value=".$row["ItemCode"].">
+              <button id=".$count." class='button1'>Edit</button>
+              </form>
+              <form method='post' action='action/skinDel.php' onsubmit='return delAl()'>
+              <input type='hidden' name='id' value=".$row["ItemCode"].">
+              <button type='submit' class='button2'>Delete</button>
+              </form>
           </td>";
 					echo "</tr>";
           $count++;
         }
       ?>
     </table>
-    <div id="myModalupdate" class="modal">
-        <div class="modal-content">
-          <span class="close" id="upclose">&times;</span>
-          <div class="modal-body">
 
-            <form action="action/skinInsert.php" method="post" enctype="multipart/form-data">
-              <div class="container">
-                <div class="container signin">
-                  <center>
-                    <h1>Update Skin Care Item</h1>
-                    <p>Please Make changes correctly to form to Update new Skin care Item</p>
-                  </center>
-                </div>
-                <hr>
-                <center>
-                    <label for="ItemCode"><b>Item Code</b></label>
-                    <br>
-                    <input type="text" placeholder="Enter Name" name="ItemCode" required>
-                    <br>
-                    <label for="ItemName"><b>Item Name</b></label>
-                    <br>
-                    <input type="text" placeholder="Enter Email" name="ItemName" required>
-                    <br>
-                    <label for="Discription"><b>Discription</b></label>
-                    <br>
-                    <input type="text" placeholder="Enter Discription" name="Discription" required>
-                    <br>
-                    <label for="Price"><b>Price LKR</b></label>
-                    <br>
-                    <input type="Text" placeholder="Repeat Password" name="Price" required>
-                    <br>
-                    <label for="image"><b>Image</b></label>
-                    <br>
-                    <input type="hidden" name="size" value="1000000">
-                    <input type="file" name="image">
-                    <hr>
-                    <input type="submit" class="registerbtn" name="submit" value="Insert"></input>
-                </center>
-              </div>
-
-              <div class="container signin">
-                <p>Already have an account? <a href="login.php">Sign in</a>.</p>
-              </div>
-            </form>
-          </div>
-          <!-- <div class="modal-footer">
-            <h3>Modal Footer</h3>
-          </div> -->
-        </div>
-
-      </div>
   <center>
     <script src="script/filter.js"></script>
     <script src="script/modal.js"></script>
-    <script src="script/editModal.js"></script>
+    <script src="script/delAlert.js"></script>
 
   </body>
 </html>
