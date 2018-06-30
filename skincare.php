@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <?php include 'header.php'; ?>
+<<<<<<< HEAD
 <?php session_start(); ?>
+=======
+>>>>>>> 1717e532022095b00a00757d7711fb2c23830a94
 <?php
 $db=mysqli_connect("localhost","root","") or die ("Error Occures");
 mysqli_select_db($db,"customer") or die("Error Occures");
@@ -46,6 +49,7 @@ $records = mysqli_query($db,$sql);
         <p><?php echo $item['Discription']; ?></p>
         <p><b>LKR </b><?php echo $item['Price']; ?></p>
       </center>
+<<<<<<< HEAD
       <form class="" action="question.php" method="post">
           <input type="hidden" name="store" value="SkinCare">
           <input type='hidden' name='itemname' value=<?php echo $item["ItemName"];?>>
@@ -57,11 +61,22 @@ $records = mysqli_query($db,$sql);
          <input type='hidden' name='price' value=<?php echo $item['Price']; ?>>
          <input type='hidden' name='itemname' value=<?php echo $item["ItemName"];?>>
          <input type='hidden' name='itemcode' value=<?php echo $item["ItemCode"];?>>
+=======
+      <form class="" action="index.html" method="post">
+         <input type='hidden' name='id' value=<?php echo $item["ItemCode"];?>>
+         <p><button id="footbut">Any Questions</button></p>
+       </form>
+       <form class="" action="index.html" method="post">
+        <input type='hidden' name='id' value=<?php echo $item["ItemCode"];?>>
+>>>>>>> 1717e532022095b00a00757d7711fb2c23830a94
         <p><button id="footbut">Quick Buy</button></p>
       </form>
 
     </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1717e532022095b00a00757d7711fb2c23830a94
   </div>
   <?php
     }

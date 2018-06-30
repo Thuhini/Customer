@@ -9,6 +9,7 @@ if($_POST["submit"]){
   $sql = "SELECT * FROM users WHERE email='".$email."' and password='".$password."' limit 1";
 
   $result = mysqli_query($db,$sql);
+<<<<<<< HEAD
   $row=mysqli_fetch_assoc($result);
     if (mysqli_num_rows($result)==1) {
           session_start();
@@ -25,6 +26,11 @@ if($_POST["submit"]){
             header("location: ../home.php");
           }
 
+=======
+
+    if (mysqli_num_rows($result)==1) {
+          header("location: ../home.php");
+>>>>>>> 1717e532022095b00a00757d7711fb2c23830a94
 
       } else {
         echo "fail";

@@ -1,8 +1,11 @@
 <?php include 'header.php'; ?>
 <?php
+<<<<<<< HEAD
  require_once('auth.php');
  ?>
 <?php
+=======
+>>>>>>> 1717e532022095b00a00757d7711fb2c23830a94
 
   $id=$_POST['id'];
   global $ic;

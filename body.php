@@ -45,11 +45,17 @@ $records = mysqli_query($db,$sql);
         <p><?php echo $item['Discription']; ?></p>
         <p><b>LKR </b><?php echo $item['Price']; ?></p>
       </center>
+<<<<<<< HEAD
       <form class="" action="question.php" method="post">
           <input type="hidden" name="store" value="Body & Bath">
           <input type='hidden' name='itemname' value=<?php echo $item["ItemName"];?>>
           <input type='hidden' name='itemcode' value=<?php echo $item["ItemCode"];?>>
          <p><button tpe ="submit" id="footbut">Any Questions</button></p>
+=======
+      <form class="" action="index.html" method="post">
+         <input type='hidden' name='id' value=<?php echo $item["ItemCode"];?>>
+         <p><button id="footbut">Any Questions</button></p>
+>>>>>>> 1717e532022095b00a00757d7711fb2c23830a94
        </form>
        <form class="" action="index.html" method="post">
         <input type='hidden' name='id' value=<?php echo $item["ItemCode"];?>>

@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <?php include 'header.php'; ?>
 <?php
+<<<<<<< HEAD
  require_once('auth.php');
  ?>
 <?php
+=======
+>>>>>>> 1717e532022095b00a00757d7711fb2c23830a94
 $db=mysqli_connect("localhost","root","") or die ("Error Occures");
 mysqli_select_db($db,"customer") or die("Error Occures");
 $sql = "SELECT * FROM men";
