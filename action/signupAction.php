@@ -1,6 +1,6 @@
 <?php
-	mysql_connect("localhost","root",'');
-	mysql_select_db('customer');
+	$db=mysqli_connect("localhost","root",'');
+	mysqli_select_db($db,'customer');
 
 	$name = $_POST["name"];
 	$email = $_POST["email"];
@@ -11,11 +11,12 @@
 	if($_POST["submit"]) {
 		$sql = "INSERT INTO users VALUES (0,'$name','$email','$password','$type')";
 
-		if(mysql_query($sql)) {
+		if(mysqli_query($db,$sql)) {
 			echo "Done";
+			header("location: ../home.php");
 		}
 		else {
-			echo "fail";
+			header("location: ../login.php");
 		}
 	}
 ?>

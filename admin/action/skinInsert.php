@@ -15,10 +15,9 @@
 
   	if (move_uploaded_file($_FILES['image']['tmp_name'], $target)) {
   		$msg = "successfully Inserted";
-      header("Location: http://localhost:8079/Customer/admin/skin.php");
+      header("Location: http://localhost/Customer/admin/skin.php");
   	}else{
   		$msg = "Failed";
   	}
   }
-  //$result = mysqli_query($db, "SELECT * FROM images");
 ?>
